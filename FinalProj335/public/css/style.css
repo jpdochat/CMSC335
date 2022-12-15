@@ -1,0 +1,13 @@
+/* You implement */
+h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+}
+
+body{
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(255, 188, 244);
+}
+

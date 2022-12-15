@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Sike</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+    </head>
+
+    <body>
+        <h2>Sike, I've Found You:</h2>
+        <p>Lol I know where you are, here is your weather:</p>
+
+        <div id="display">
+            <div id="city"></div>
+            <div id="temperature"></div>
+        </div>
+        <br>
+        <br>
+        <a href="/">Home</a>
+    </body>
+
+    <script>
+        window.addEventListener("load", () =>{
+            let lon;
+            let lat;
+            let apiKey = "7269a4b618a947e789403db5ffd38fde";
+            let cityName = document.querySelector("#city")
+            let temperatureValue = document.querySelector("#temperature")
+
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition (position => {
+                    lon = position.coords.longitude
+                    lat = position.coords.latitude
+
+                    const api = `https://api.weatherbit.io/v2.0/current?lat=${lat}&lon=${lon}&key=${apiKey}&lang=eng`;
+
+                    fetch(api)
+                        .then(response => {
+                            return response.json()
+                        })
+                        .then(data => {
+                            const { timezone, temp, sunrise, sunset} = data.data[0]
+                            const { description, icon} = data.data[0].weather
+
+                            cityName.textContent = timezone;
+                            temperatureValue.textContent = Math.floor(temp) + " °C"
+                        })
+                })
+            }
+        })
+
+    </script>

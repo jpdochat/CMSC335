@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>tellUs</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+    </head>
+
+    <body>
+        <h1>Form</h1>
+        <form action="/formResults" method="post">
+                <br>
+                <label><strong>First Name: </strong><input type="text" name="Fname"/></label>
+                <br>
+                <label><strong>Last Name: </strong><input type="text" name="Lname"/></label>
+                <br>
+                <br>
+
+                <leged>Your Requests</leged>
+                <br>
+                <label><strong>What do you like so far?</strong><br><textarea rows="5" cols="20" name="likes"></textarea></label>
+                <br>
+                <label><strong>What do you want us to do?</strong><br><textarea rows="5" cols="20" name="wants"></textarea></label>
+
+            <br>
+            <input type="submit" value="Submit"/>
+        </form>
+        <hr>
+        <br>
+        <a href="/">Cancel</a>
+    </body>
+</html>
